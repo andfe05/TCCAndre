@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Template LaTeX para Projetos de Pesquisa — IFPI
 
 Template em LaTeX para elaboração de Projetos de Pesquisa do **Instituto Federal do Piauí (IFPI)**, totalmente alinhado às normas ABNT vigentes (incluindo a NBR 15287 para Projetos de Pesquisa e a NBR 10520:2023 para citações) e ao *Manual de Trabalhos Acadêmicos do IFPI (2024)*.
@@ -168,3 +169,6 @@ python3 verificar_conformidade.py
 ---
 
 **Professor Ronaldo Pires Borges**
+=======
+# TCCAndre
+>>>>>>> 3de6737cd1b95842829dff4abe814928d2708a7a
