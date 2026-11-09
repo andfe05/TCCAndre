@@ -54,7 +54,7 @@ Os herbários reúnem exemplares botânicos preservados e informações associad
 
 A organização das informações de um herbário é necessária para que os exemplares possam ser localizados e consultados. \citeonline{teixeira2016herbario} discute a importância do registro e da informatização das exsicatas para o controle do acervo e o acesso às informações. Estudos sobre a digitalização de coleções botânicas também apontam que a disponibilização de dados e imagens pode ampliar as possibilidades de consulta e reduzir a necessidade de manuseio dos exemplares físicos \cite{thompson2023digitisation}.
 
-Nesse contexto, este trabalho propõe o desenvolvimento de uma plataforma web para apoiar a catalogação e a consulta do acervo do Herbário do IFPI – Campus Floriano. A proposta concentra-se em um conjunto delimitado de funcionalidades, como o cadastro e a consulta de registros de exsicatas, com informações de identificação e coleta e, quando disponíveis, imagens dos exemplares. A definição dos campos e das funcionalidades deverá considerar as necessidades dos responsáveis pelo herbário.
+Nesse contexto, este trabalho propõe o desenvolvimento de uma plataforma web para apoiar a catalogação e a consulta do acervo do Herbário do IFPI -- Campus Floriano. A proposta concentra-se em um conjunto delimitado de funcionalidades, como o cadastro e a consulta de registros de exsicatas, com informações de identificação e coleta e, quando disponíveis, imagens dos exemplares. A definição dos campos e das funcionalidades deverá considerar as necessidades dos responsáveis pelo herbário.
 
 Espera-se que a plataforma ofereça uma forma organizada de registrar e acessar as informações do acervo e sirva como base para futuras ampliações. Assim, o trabalho articula o desenvolvimento de software a uma necessidade concreta do campus, com foco em uma solução de alcance compatível com o projeto de conclusão de curso.
 
@@ -78,16 +78,16 @@ Este questionamento surge da observação de que a informatização do acervo é
 
 Os objetivos definem o que se pretende alcançar com a realização da pesquisa. Devem ser formulados de forma clara e precisa, utilizando verbos no infinitivo que expressem ações concretas e mensuráveis.
 
-\subsubsection{Objetivo Geral}
+\subsubsection{Objetivo geral}
 \label{subsubsec:objetivo-geral}
 
 Desenvolver uma plataforma web para o registro e a organização das exsicatas do Herbário do IFPI -- Campus Floriano e para a consulta pública do catálogo do acervo por visitantes.
 
-\subsubsection{Objetivos Específicos}
+\subsubsection{Objetivos específicos}
 \label{subsubsec:objetivos-especificos}
 
 \begin{enumerate}
-    \item Compreender o processo de coleta, identificação, armazenamento e consultas das exicatas do acervo; 
+    \item Compreender o processo de coleta, identificação, armazenamento e consultas das exsicatas do acervo; 
     \item Modelar o banco de dados a partir das informações levantadas e das práticas de curadoria de herbários;
     \item Implementar a área de gerenciamento do acervo, com cadastro, edição e associação de imagens às exsicatas;
     \item Implementar a área pública de consulta ao catálogo, com busca e visualização dos registros;
@@ -98,18 +98,15 @@ Desenvolver uma plataforma web para o registro e a organização das exsicatas d
 \subsection{JUSTIFICATIVA}
 \label{subsec:justificativa}
 
-A justificativa deve demonstrar a relevância e a importância da pesquisa, apresentando argumentos que evidenciem sua contribuição para o avanço do conhecimento científico e/ou para a solução de problemas práticos.
+O Herbário do IFPI -- Campus Floriano mantém o registro do seu acervo em um livro e nas etiquetas das próprias exsicatas \cite{lopes2023herbario}. Esse modo de registro deixa as informações dependentes da conservação do material físico, e o histórico do herbário mostra que esse risco é real: quando as atividades foram retomadas, em 2018, cerca de 300 exsicatas precisaram ser descartadas por deterioração \cite{lopes2023herbario}. Uma plataforma que registre os dados de cada exsicata de forma independente do exemplar contribui para preservar essas informações e para dar maior controle sobre o acervo, como aponta \citeonline{teixeira2016herbario} ao tratar do tombo e da informatização de herbários.
 
-Esta pesquisa justifica-se por diversos aspectos:
+Do ponto de vista social e educacional, a plataforma amplia o acesso ao acervo. O herbário é usado como espaço de aprendizagem prática por estudantes de Ciências Biológicas \cite{lopes2023herbario}, e a consulta on-line permite conhecer os registros sem manusear os exemplares, o que reduz o risco de danos ao material \cite{teixeira2016herbario}. Além disso, a disponibilização digital das exsicatas é uma das formas de os herbários alcançarem um público maior, incluindo estudantes da educação básica \cite{souza2022herbarios}.
 
-\textbf{Relevância Científica:} O tema abordado contribui para o avanço do conhecimento na área de [ÁREA DE CONHECIMENTO], especialmente no que se refere a [ASPECTO ESPECÍFICO]. Conforme destacado por \citeonline{inep2022}, existe uma lacuna na literatura sobre [LACUNA IDENTIFICADA], que esta pesquisa pretende contribuir para preencher.
+Do ponto de vista científico e tecnológico, os sistemas existentes para a informatização de herbários são, em geral, soluções de grande porte ou de propósito geral, voltadas a instituições de pesquisa (\autoref{subsec:estudos-relacionados}). Esta pesquisa explora uma solução de menor porte, adequada a um herbário didático e mantida pela própria instituição, cuja modelagem pode tomar como referência o padrão \textit{Darwin Core} \cite{tdwg2009darwincore}, de modo a facilitar uma eventual integração futura com redes de dados de biodiversidade.
 
-\textbf{Relevância Social:} Os resultados desta pesquisa poderão beneficiar [PÚBLICO-ALVO OU SOCIEDADE EM GERAL], uma vez que [EXPLICAR COMO OS RESULTADOS PODEM SER APLICADOS]. Segundo dados de \cite{instituicao2023}, [APRESENTAR DADOS QUE EVIDENCIEM A RELEVÂNCIA SOCIAL].
+Do ponto de vista acadêmico, o trabalho articula conteúdos do curso de Análise e Desenvolvimento de Sistemas, como levantamento de requisitos, modelagem de dados e desenvolvimento web, a uma demanda concreta de outra área do campus. Isso aproxima o curso da Biologia e resulta em um produto que pode ser mantido e ampliado em trabalhos futuros.
 
-\textbf{Relevância Acadêmica:} Este estudo contribuirá para a formação acadêmica do pesquisador e para o desenvolvimento de pesquisas futuras na área, fornecendo subsídios teóricos e metodológicos para estudos similares.
-
-\textbf{Viabilidade:} A pesquisa é viável considerando os recursos disponíveis, o tempo previsto para sua execução e o acesso às fontes de informação necessárias.
-
+Por fim, a pesquisa é viável porque o acervo é de pequeno porte, com cerca de 200 exsicatas na data do relato de \citeonline{lopes2023herbario}. Além disso, a equipe responsável pelo herbário está no próprio campus, o que facilita o levantamento de requisitos e a validação, e as tecnologias escolhidas são de código aberto, sem custo de licenças (\autoref{subsec:tecnologias}).
 
 \section{REFERENCIAL TEÓRICO}
 \label{sec:referencial}
@@ -125,9 +122,9 @@ Um herbário é uma coleção científica de plantas ou fungos secos, fixados em
 
 A importância dessas coleções cresceu após a Convenção sobre a Diversidade Biológica, assinada em 1992 \cite{teixeira2016herbario,peixoto2003colecoes}. \citeonline{souza2022herbarios} apontam que os herbários abrigam amostras da biodiversidade vegetal de diferentes ecossistemas e apoiam pesquisas em áreas como filogenia, taxonomia e fenologia, além de formarem um sistema de informação sobre plantas locais ou exóticas, inclusive daquelas que já não são encontradas em determinada região. \citeonline{teixeira2016herbario} acrescenta que as coleções biológicas podem atender à demanda por informações para a avaliação de impactos ambientais, a definição de áreas de preservação, a proteção de espécies ameaçadas e o estabelecimento de políticas públicas.
 
-Os herbários também têm função didática. \citeonline{lopes2022herbarios} revisaram teses e dissertações brasileiras defendidas entre 2011 e 2020 sobre o uso de herbários no aprendizado de Botânica e concluíram que o tema ainda é pouco estudado, mas que o herbário didático desperta a curiosidade científica dos estudantes e incentiva a conscientização ambiental. No contexto do IFPI Campus Floriano, \citeonline{lopes2023herbario} relata que o contato com as exsicatas permite ao discente identificar, por meio das etiquetas, nomes científicos, datas e informações sobre a coleta e a localização das plantas, o que desperta o interesse pela taxonomia e pela conservação das espécies.
+Os herbários também têm função didática. \citeonline{lopes2022herbarios} revisaram teses e dissertações brasileiras defendidas entre 2011 e 2020 sobre o uso de herbários no aprendizado de Botânica e concluíram que o tema ainda é pouco estudado, mas que o herbário didático desperta a curiosidade científica dos estudantes e incentiva a conscientização ambiental. No contexto do IFPI -- Campus Floriano, \citeonline{lopes2023herbario} relata que o contato com as exsicatas permite ao discente identificar, por meio das etiquetas, nomes científicos, datas e informações sobre a coleta e a localização das plantas, o que desperta o interesse pela taxonomia e pela conservação das espécies.
 
-O Herbário do IFPI Campus Floriano teve origem nas primeiras exsicatas produzidas em uma visita técnica realizada em 6 de novembro de 2003 e, em 2007, passou a contar com um livro de registro, que reunia 526 exsicatas \cite{lopes2023herbario}. Com a interrupção das atividades, as coordenadoras retomaram o trabalho em 2018 e constataram a perda de cerca de 300 exsicatas, descartadas por deterioração; na data do relato, o herbário possuía cerca de 200 exsicatas \cite{lopes2023herbario}. Esse histórico evidencia que a conservação do acervo e a preservação das informações a ele associadas são desafios concretos para a instituição.
+O Herbário do IFPI -- Campus Floriano teve origem nas primeiras exsicatas produzidas em uma visita técnica realizada em 6 de novembro de 2003 e, em 2007, passou a contar com um livro de registro, que reunia 526 exsicatas \cite{lopes2023herbario}. Com a interrupção das atividades, as coordenadoras retomaram o trabalho em 2018 e constataram a perda de cerca de 300 exsicatas, descartadas por deterioração; na data do relato, o herbário possuía cerca de 200 exsicatas \cite{lopes2023herbario}. Esse histórico evidencia que a conservação do acervo e a preservação das informações a ele associadas são desafios concretos para a instituição.
 
 \subsection{COLETA, HERBORIZAÇÃO E CATALOGAÇÃO DO ACERVO}
 \label{subsec:coleta-catalogacao}
@@ -138,7 +135,7 @@ O Herbário do IFPI Campus Floriano teve origem nas primeiras exsicatas produzid
 % e Lopes (2023); quando receber os manuais, complemente/ajuste os trechos abaixo
 % e acrescente as referências no referencias.bib.
 
-A obtenção de um exemplar de herbário segue um conjunto de procedimentos, que vai da coleta em campo à catalogação, e que assegura a qualidade da pesquisa e a credibilidade científica da coleção \cite{freitas2021coleta}. Esta subseção resume essas etapas com base em um guia prático de coleta de material botânico e em trabalhos sobre a manutenção de herbários didáticos; os procedimentos específicos adotados pela equipe do Herbário do IFPI Campus Floriano serão complementados com os manuais utilizados por ela.
+A obtenção de um exemplar de herbário segue um conjunto de procedimentos, que vai da coleta em campo à catalogação, e que assegura a qualidade da pesquisa e a credibilidade científica da coleção \cite{freitas2021coleta}. Esta subseção resume essas etapas com base em um guia prático de coleta de material botânico e em trabalhos sobre a manutenção de herbários didáticos; os procedimentos específicos adotados pela equipe do Herbário do IFPI -- Campus Floriano serão complementados com os manuais utilizados por ela.
 
 \subsubsection{Coleta em campo}
 
@@ -146,13 +143,13 @@ A coleta de plantas e fungos no Brasil exige licença ou autorização prévia d
 
 \subsubsection{Herborização}
 
-A herborização compreende a prensagem, a secagem e a montagem das exsicatas \cite{freitas2021coleta}. Na prensagem, as amostras são acomodadas entre folhas de papel ou jornal e papelão, com o número de coleta identificado, e comprimidas entre duas grades de madeira amarradas; em seguida, as prensas são levadas a uma estufa, onde o material é desidratado, e devem ser reapertadas periodicamente, porque as amostras perdem água e geram folga na prensa \cite{freitas2021coleta}. Na montagem, a amostra seca é fixada, por costura ou colagem, em cartolina livre de ácido de $30 \times 42$ cm e recebe uma etiqueta de $10 \times 12$ cm com a sigla do herbário, a identificação botânica, a data e os dados de origem, além do carimbo com o número de tombo do herbário \cite{freitas2021coleta}. Amostras adicionais com o mesmo número de coleta são chamadas duplicatas e servem a intercâmbios entre herbários; quando não há duplicatas, a exsicata é considerada unicata \cite{freitas2021coleta}.
+A herborização compreende a prensagem, a secagem e a montagem das exsicatas \cite{freitas2021coleta}. Na prensagem, as amostras são acomodadas entre folhas de papel ou jornal e papelão, com o número de coleta identificado, e comprimidas entre duas grades de madeira amarradas; em seguida, as prensas são levadas a uma estufa, onde o material é desidratado, e devem ser reapertadas periodicamente, porque as amostras perdem água e geram folga na prensa \cite{freitas2021coleta}. Na montagem, a amostra seca é fixada, por costura ou colagem, em cartolina livre de ácido de $30 \times 42$~cm e recebe uma etiqueta de $10 \times 12$~cm com a sigla do herbário, a identificação botânica, a data e os dados de origem, além do carimbo com o número de tombo do herbário \cite{freitas2021coleta}. Amostras adicionais com o mesmo número de coleta são chamadas duplicatas e servem a intercâmbios entre herbários; quando não há duplicatas, a exsicata é considerada unicata \cite{freitas2021coleta}.
 
 \subsubsection{Catalogação e manutenção}
 
 Depois de herborizadas e incorporadas à coleção, as plantas passam a ser denominadas exsicatas e recebem um número de registro (tombo), identificado por um carimbo da instituição; cada exsicata possui uma ficha com o local da coleta, o coletor, o habitat, usos populares ou medicinais e o número de coleta \cite{teixeira2016herbario}. A manutenção da coleção inclui a verificação da presença de fungos e a degradação das embalagens, a desinsetização dos exemplares e dos armários e a revisão das fichas de identificação para corrigir erros de identificação e de agrupamento em famílias \cite{teixeira2016herbario}. Novas exsicatas podem ser identificadas por comparação com o material já identificado, por chaves dicotômicas e por literatura específica \cite{teixeira2016herbario}.
 
-No Herbário do IFPI Campus Floriano, as coordenadoras adquiriram por conta própria um curso de introdução à taxonomia de campo para treinar os discentes nas atividades de herborização, e o registro dos exemplares era mantido em um livro de registro criado em 2007 \cite{lopes2023herbario}. O \autoref{qua:etapas} sintetiza as etapas descritas e as informações geradas em cada uma delas, que são justamente os dados que uma plataforma de catalogação precisa representar.
+No Herbário do IFPI -- Campus Floriano, as coordenadoras adquiriram por conta própria um curso de introdução à taxonomia de campo para treinar os discentes nas atividades de herborização, e o registro dos exemplares era mantido em um livro de registro criado em 2007 \cite{lopes2023herbario}. O \autoref{qua:etapas} sintetiza as etapas descritas e as informações geradas em cada uma delas, que são justamente os dados que uma plataforma de catalogação precisa representar.
 
 \begin{quadro}[htbp]
     \centering
@@ -178,7 +175,11 @@ Tradicionalmente, o acesso às informações de uma exsicata exige o manuseio do
 
 A informatização dos herbários responde a esse problema. \citeonline{peixoto2003colecoes} já assinalavam que a informatização agiliza o processo de geração do conhecimento e que o georreferenciamento das amostras constitui informação relevante, mas que o processo ainda era incipiente no Brasil: apenas 52\% dos herbários tinham mais da metade do acervo informatizado, e 11\% sequer haviam começado. Para \citeonline{souza2022herbarios}, a implantação de um banco de dados agiliza o intercâmbio de informações entre regiões e reduz o envio de material físico, que em alguns casos danificava as amostras; além disso, a disponibilização on-line permite analisar os dados sem viagens exaustivas e contorna a burocracia de acesso às coleções. \citeonline{teixeira2016herbario} indica que o registro (tombo) e a informatização dos dados geram maior controle sobre o acervo e viabilizam a digitalização, em que cada exemplar é fotografado. \citeonline{thompson2023digitisation} também examinam o fluxo de digitalização em um herbário universitário.
 
-\citeonline{souza2022herbarios}, citando Hopkins (2005), descrevem três usos da virtualização de um herbário: o uso intra-herbário, de consulta a imagens e dados do próprio herbário, que facilita a rotina de curadoria e reduz o risco de danos em consultas físicas; o uso inter-herbário, de consulta a dados de outros herbários para melhorar a curadoria local; e o uso extra-herbário, de consulta a vários herbários para fins que vão além da curadoria, como listas regionais de espécies e informações sobre coletores. A plataforma proposta nesta pesquisa se enquadra, em primeiro lugar, no uso intra-herbário, pois organiza e disponibiliza o acervo do próprio Herbário do IFPI Campus Floriano.
+% PENDENTE: a citação de Hopkins (2005) deve seguir o formato ABNT de citação de
+% citação (apud). Depois de criar a entrada hopkins2005 no referencias.bib (com os
+% dados da lista de referências de Souza et al.), troque o início do parágrafo por:
+% Segundo \apudonline{hopkins2005}{souza2022herbarios}, a virtualização de um herbário tem três usos: ...
+\citeonline{souza2022herbarios}, citando Hopkins (2005), descrevem três usos da virtualização de um herbário: o uso intra-herbário, de consulta a imagens e dados do próprio herbário, que facilita a rotina de curadoria e reduz o risco de danos em consultas físicas; o uso inter-herbário, de consulta a dados de outros herbários para melhorar a curadoria local; e o uso extra-herbário, de consulta a vários herbários para fins que vão além da curadoria, como listas regionais de espécies e informações sobre coletores. A plataforma proposta nesta pesquisa se enquadra, em primeiro lugar, no uso intra-herbário, pois organiza e disponibiliza o acervo do próprio Herbário do IFPI -- Campus Floriano.
 
 Para que os dados possam ser compartilhados, é útil adotar padrões. O \textit{Darwin Core} é um padrão do \textit{Biodiversity Information Standards} (TDWG) que oferece um conjunto de termos para descrever e compartilhar dados sobre a ocorrência de organismos e sobre os espécimes de coleções biológicas \cite{tdwg2009darwincore}. Adotá-lo como referência para a modelagem dos campos da plataforma facilita uma eventual integração futura com redes de herbários.
 % VERIFICAR: confirmar no site do TDWG (https://dwc.tdwg.org) a descrição do padrão
@@ -229,7 +230,8 @@ O \autoref{qua:tecnologias} compara as tecnologias escolhidas com alternativas u
 \subsection{ESTUDOS E SISTEMAS RELACIONADOS}
 \label{subsec:estudos-relacionados}
 
-Existem sistemas voltados à informatização e à disponibilização de acervos de herbários. O Herbário Virtual Reflora, resultado do Programa Reflora, iniciado em 2010, reúne imagens em alta resolução de exsicatas e dados associados repatriados de herbários estrangeiros, com o objetivo de reproduzir em ambiente virtual o que se pode fazer em um herbário real; foi lançado em 2013, atingiu um milhão de imagens em 2015 e pode ser consultado tanto pela comunidade botânica quanto pelo público em geral \cite{forzza2015reflora}. O Jabot, desenvolvido no Jardim Botânico do Rio de Janeiro entre 2003 e 2005 com \textit{software} livre (PHP e PostgreSQL), gerencia o herbário da instituição, que está totalmente informatizado e digitalizado, com cerca de 760 mil registros, e usa PostGIS para validação geográfica \cite{silva2019agrupamentos}. Outra solução é o Symbiota, plataforma exclusivamente web para a criação de comunidades de informação sobre biodiversidade baseadas em espécimes-testemunho (\textit{voucher}), que oferece amplos recursos de troca de dados \cite{gries2014symbiota}.
+Existem sistemas voltados à informatização e à disponibilização de acervos de herbários. O Herbário Virtual Reflora, resultado do Programa Reflora, iniciado em 2010, reúne imagens em alta resolução de exsicatas e dados associados repatriados de herbários estrangeiros, com o objetivo de reproduzir em ambiente virtual o que se pode fazer em um herbário real; foi lançado em 2013, atingiu um milhão de imagens em 2015 e pode ser consultado tanto pela comunidade botânica quanto pelo público em geral \cite{forzza2015reflora}. O Jabot, desenvolvido no Jardim Botânico do Rio de Janeiro entre 2003 e 2005 com software livre (PHP e PostgreSQL), gerencia o herbário da instituição, que está totalmente informatizado e digitalizado, com cerca de 760 mil registros, e usa PostGIS para validação geográfica \cite{silva2019agrupamentos}. Outra solução é o Symbiota, plataforma exclusivamente web para a criação de comunidades de informação sobre biodiversidade baseadas em espécimes-testemunho (\textit{voucher}), que oferece amplos recursos de troca de dados \cite{gries2014symbiota}.
+
 Há ainda iniciativas que integram vários acervos. O Instituto Nacional de Ciência e Tecnologia Herbário Virtual da Flora e dos Fungos (INCT-HVFF), aprovado em 2008 e em atividade desde 2009, tem como objetivos disponibilizar dados de herbários de forma livre, aberta e integrada, repatriar dados de coletas brasileiras depositadas no exterior e melhorar a qualidade dos acervos dos herbários do país, e disponibiliza o Herbário Virtual por meio da rede \textit{speciesLink} \cite{incthvff2026}. O Herbário Virtual Glaziou usa essa mesma rede para reunir informações e imagens das exsicatas coletadas por Auguste Glaziou no Brasil e depositadas no Museu Nacional do Rio de Janeiro e no Museu Nacional de História Natural de Paris \cite{glaziou2026}. Fora do Brasil, o Herbario Digital chileno oferece catálogo taxonômico, busca de imagens, seção de espécimes e mapa sobre a flora vascular do país \cite{herbariodigital2026}.
 % VERIFICAR: as páginas do INCT-HVFF, Glaziou e Herbario Digital não informam o número
 % de registros; se quiser números, abra os sites no navegador e confira (data de acesso 12 out. 2026).
@@ -255,7 +257,7 @@ O \autoref{qua:relacionados} compara esses sistemas com a plataforma proposta.
     \fonte{Elaborado pelo autor, com base nas páginas e nos autores citados.}
 \end{quadro}
 
-Esses sistemas mostram que a informatização de herbários é uma prática consolidada e que o PostgreSQL, tecnologia escolhida para esta proposta, é usado em um sistema reconhecido da área, o Jabot. Eles também deixam uma lacuna que a presente proposta busca preencher: são soluções de grande porte ou de propósito geral, voltadas a instituições de pesquisa, enquanto o Herbário do IFPI Campus Floriano é um herbário didático de acervo pequeno, cujo registro ainda depende de um livro e dos próprios exemplares \cite{lopes2023herbario}. A proposta se diferencia por oferecer uma plataforma simples, mantida pela própria instituição, que concentra o cadastro e a consulta das exsicatas e que pode, no futuro, adotar padrões como o \textit{Darwin Core} para facilitar o intercâmbio de dados com redes maiores.
+Esses sistemas mostram que a informatização de herbários é uma prática consolidada e que o PostgreSQL, tecnologia escolhida para esta proposta, é usado em um sistema reconhecido da área, o Jabot. Eles também deixam uma lacuna que a presente proposta busca preencher: são soluções de grande porte ou de propósito geral, voltadas a instituições de pesquisa, enquanto o Herbário do IFPI -- Campus Floriano é um herbário didático de acervo pequeno, cujo registro ainda depende de um livro e dos próprios exemplares \cite{lopes2023herbario}. A proposta se diferencia por oferecer uma plataforma simples, mantida pela própria instituição, que concentra o cadastro e a consulta das exsicatas e que pode, no futuro, adotar padrões como o \textit{Darwin Core} para facilitar o intercâmbio de dados com redes maiores.
 % VERIFICAR com o orientador: confirmar se "enxuta/sob medida" é o posicionamento que
 % você quer defender e se o texto não promete funcionalidades além do escopo dos objetivos.
 
@@ -287,7 +289,7 @@ Em relação aos procedimentos técnicos, será realizada uma PESQUISA BIBLIOGR�
 
 A população desta pesquisa é constituída por [DEFINIR A POPULAÇÃO]. Para a definição da amostra, será utilizada a técnica de [TIPO DE AMOSTRAGEM], que, segundo \citeonline{hair2019}, é adequada para garantir a representatividade dos dados.
 
-O tamanho da amostra foi calculated considerando [CRITÉRIOS DE CÁLCULO], resultando em [NÚMERO] participantes/elementos.
+O tamanho da amostra foi calculado considerando [CRITÉRIOS DE CÁLCULO], resultando em [NÚMERO] participantes/elementos.
 
 \subsection{TÉCNICAS DE COLETA DE DADOS}
 \label{subsec:coleta-dados}
