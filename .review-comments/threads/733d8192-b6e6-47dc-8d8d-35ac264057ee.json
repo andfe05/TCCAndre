@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "kind": "review-thread",
+  "id": "733d8192-b6e6-47dc-8d8d-35ac264057ee",
+  "revision": 1,
+  "resource": {
+    "path": "projeto_de_pesquisa.tex"
+  },
+  "anchor": {
+    "kind": "text",
+    "range": {
+      "start": {
+        "line": 69,
+        "character": 191
+      },
+      "end": {
+        "line": 69,
+        "character": 191
+      }
+    },
+    "snapshot": "",
+    "before": " do Herbário do IFPI -- Campus Floriano e disponibilizar o catálogo do acervo para consulta por ",
+    "after": "visitantes?}\n\nEste questionamento surge da observação de que a informatização do acervo é aponta",
+    "stale": false
+  },
+  "status": "open",
+  "comments": [
+    {
+      "id": "d1dbaa26-41d4-4b62-8aad-e4c322348146",
+      "body": "...consulta por pesquisadores e visitantes?",
+      "author": "Reviewer",
+      "createdAt": "2026-11-09T20:01:25.502Z",
+      "updatedAt": "2026-11-09T20:01:25.502Z"
+    }
+  ],
+  "tags": [],
+  "createdAt": "2026-11-09T20:01:25.502Z",
+  "updatedAt": "2026-11-09T20:01:25.505Z",
+  "metadata": {}
+}

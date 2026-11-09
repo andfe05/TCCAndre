@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "kind": "review-thread",
+  "id": "c9246dc5-10fd-452b-b217-b786f5a5a42d",
+  "revision": 1,
+  "resource": {
+    "path": "projeto_de_pesquisa.tex"
+  },
+  "anchor": {
+    "kind": "text",
+    "range": {
+      "start": {
+        "line": 342,
+        "character": 0
+      },
+      "end": {
+        "line": 365,
+        "character": 11
+      }
+    },
+    "snapshot": "\n\\subsubsection{Orçamento}\n\\label{subsubsec:orcamento}\n\nA \\autoref{tab:orcamento} sintetiza os custos previstos por categoria de despesa para a realização da pesquisa.\n\n\\begin{table}[htbp]\n    \\centering\n    \\caption{Orçamento estimado da pesquisa}\n    \\label{tab:orcamento}\n    \\begin{tabularx}{0.85\\textwidth}{Xcr}\n        \\toprule\n        \\textbf{Item / Descrição} & \\textbf{Qtd.} & \\textbf{Valor Total (R\\$)} \\\\\n        \\midrule\n        Material de escritório e insumos & 1 & 150,00 \\\\\n        Impressões e cópias de questionários & 1 & 100,00 \\\\\n        Deslocamento e transporte para coleta & 1 & 200,00 \\\\\n        Licenças de software e ferramentas & 1 & 300,00 \\\\\n        \\midrule\n        \\textbf{TOTAL} & & \\textbf{750,00} \\\\\n        \\bottomrule\n    \\end{tabularx}\n    \\fonte{Elaborado pelo autor.}\n\\end{table}",
+    "before": "ais}\n\n[DETALHAR INFRAESTRUTURA DE LABORATÓRIOS, EQUIPAMENTOS, SOFTWARES E INSUMOS NECESSÁRIOS].\n",
+    "after": "\n\n\n\\section{CRONOGRAMA DE EXECUÇÃO}\n\\label{sec:cronograma}\n\nO cronograma apresenta a distribuiçã",
+    "stale": false
+  },
+  "status": "open",
+  "comments": [
+    {
+      "id": "7278113b-0438-490b-96b0-f851f0c3c703",
+      "body": "Seria bom adicionar os custos de hospedagem e consultas da API do Pl@ntNet. ",
+      "author": "Reviewer",
+      "createdAt": "2026-11-09T20:13:26.945Z",
+      "updatedAt": "2026-11-09T20:13:26.945Z"
+    }
+  ],
+  "tags": [],
+  "createdAt": "2026-11-09T20:13:26.945Z",
+  "updatedAt": "2026-11-09T20:13:26.959Z",
+  "metadata": {}
+}

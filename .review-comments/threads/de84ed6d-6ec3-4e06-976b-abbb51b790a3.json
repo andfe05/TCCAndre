@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "kind": "review-thread",
+  "id": "de84ed6d-6ec3-4e06-976b-abbb51b790a3",
+  "revision": 1,
+  "resource": {
+    "path": "projeto_de_pesquisa.tex"
+  },
+  "anchor": {
+    "kind": "text",
+    "range": {
+      "start": {
+        "line": 309,
+        "character": 0
+      },
+      "end": {
+        "line": 312,
+        "character": 326
+      }
+    },
+    "snapshot": "\\subsection{ASPECTOS ÉTICOS}\n\\label{subsec:aspectos-eticos}\n\nEsta pesquisa será desenvolvida respeitando os princípios éticos estabelecidos pela Resolução nº 466/2012 do Conselho Nacional de Saúde. [SE APLICÁVEL: O projeto será submetido ao Comitê de Ética em Pesquisa (CEP) antes da coleta de dados]. Todos os participantes assinarão o Termo de Consentimento Livre e Esclarecido (TCLE).",
+    "before": "ística descritiva e inferencial. Os dados qualitativos serão submetidos à análise de conteúdo.\n\n",
+    "after": "\n\n\n\\section{RESULTADOS ESPERADOS}\n\\label{sec:resultados-esperados}\n\nOs resultados esperados desc",
+    "stale": false
+  },
+  "status": "open",
+  "comments": [
+    {
+      "id": "810acec5-7f7d-4ca0-8f76-d535e7f0307d",
+      "body": "Não se aplica",
+      "author": "Reviewer",
+      "createdAt": "2026-11-09T20:11:37.546Z",
+      "updatedAt": "2026-11-09T20:11:37.546Z"
+    }
+  ],
+  "tags": [],
+  "createdAt": "2026-11-09T20:11:37.546Z",
+  "updatedAt": "2026-11-09T20:11:37.560Z",
+  "metadata": {}
+}
