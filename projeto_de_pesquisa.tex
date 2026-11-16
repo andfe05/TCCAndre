@@ -125,7 +125,7 @@ Os herbários também têm função didática. \citeonline{lopes2022herbarios} r
 
 O Herbário do IFPI -- Campus Floriano teve origem nas primeiras exsicatas produzidas em uma visita técnica realizada em 6 de novembro de 2003 e, em 2007, passou a contar com um livro de registro, que reunia 526 exsicatas \cite{lopes2023herbario}. Com a interrupção das atividades, as coordenadoras retomaram o trabalho em 2018 e constataram a perda de cerca de 300 exsicatas, descartadas por deterioração; na data do relato, o herbário possuía cerca de 200 exsicatas \cite{lopes2023herbario}. Esse histórico evidencia que a conservação do acervo e a preservação das informações a ele associadas são desafios concretos para a instituição.
 
-\subsection{COLETA, HERBORIZAÇÃO E CATALOGAÇÃO DO ACERVO}
+\subsection{COLETA, HERBORIZAÇÃO E CATALOGAÇÃO DO ACERVO} 
 \label{subsec:coleta-catalogacao}
 
 % TODO (André): pedir à equipe do Herbário os manuais/protocolos que eles seguem
@@ -134,6 +134,10 @@ O Herbário do IFPI -- Campus Floriano teve origem nas primeiras exsicatas produ
 % Gasper et al. (2021), Paton et al. (2026) e Lopes (2023); quando receber os
 % manuais, complemente/ajuste os trechos abaixo e acrescente as referências
 % no referencias.bib.
+
+
+% https://www.researchgate.net/profile/Rodrigo-Polisel
+%https://www.researchgate.net/profile/Suzana-Ursi
 
 A obtenção de um exemplar de herbário segue um conjunto de procedimentos, que vai da coleta em campo à catalogação, e que assegura a qualidade da pesquisa e a credibilidade científica da coleção \cite{freitas2021coleta}. Esta subseção resume essas etapas com base em um guia prático de coleta de material botânico e em trabalhos sobre a curadoria e a digitalização de acervos; os procedimentos específicos adotados pela equipe do Herbário do IFPI -- Campus Floriano serão complementados com os manuais utilizados por ela.
 
@@ -153,7 +157,7 @@ A curadoria não termina no tombamento. \citeonline{paton2026digitisation} desta
 
 No Herbário do IFPI -- Campus Floriano, as coordenadoras adquiriram por conta própria um curso de introdução à taxonomia de campo para treinar os discentes nas atividades de herborização, e o registro dos exemplares era mantido em um livro de registro criado em 2007 \cite{lopes2023herbario}. O \autoref{qua:etapas} sintetiza as etapas descritas e as informações geradas em cada uma delas, que são justamente os dados que uma plataforma de catalogação precisa representar.
 
-\begin{quadro}[htbp]
+\begin{quadro}[htbp] % htbp posicionamento 
     \centering
     \caption{Etapas do tratamento do material botânico e informações geradas}
     \label{qua:etapas}
@@ -258,7 +262,6 @@ O \autoref{qua:relacionados} compara esses sistemas com a plataforma proposta.
 Esses sistemas mostram que a informatização de herbários é uma prática consolidada e que o PostgreSQL, tecnologia escolhida para esta proposta, é usado em um sistema reconhecido da área, o Jabot. Eles também deixam uma lacuna que a presente proposta busca preencher: são soluções de grande porte ou de propósito geral, voltadas a instituições de pesquisa, enquanto o Herbário do IFPI -- Campus Floriano é um herbário didático de acervo pequeno, cujo registro ainda depende de um livro e dos próprios exemplares \cite{lopes2023herbario}. O caso do Jabot ilustra bem essa distância: o sistema é sustentado por um \textit{datacenter} institucional, com sala de equipamentos de energia ininterrupta, gerador a diesel e sistema de refrigeração dedicado, e o seu código-fonte não foi disponibilizado de forma aberta, de modo que instituições parceiras o utilizam na infraestrutura do próprio Jardim Botânico, no modelo de \textit{software} como serviço \cite{silva2017jabot}. Em sentido inverso, a experiência de \citeonline{gasper2021digitalizacao} com herbários brasileiros de pequeno porte mostra que um bom banco de dados e procedimentos simples de preparo das amostras são suficientes para iniciar a informatização de acervos modestos. A proposta se diferencia por oferecer uma plataforma simples, mantida pela própria instituição, que concentra o cadastro e a consulta das exsicatas e que pode, no futuro, adotar padrões como o \textit{Darwin Core} para facilitar o intercâmbio de dados com redes maiores.
 % VERIFICAR com o orientador: confirmar se "enxuta/sob medida" é o posicionamento que
 % você quer defender e se o texto não promete funcionalidades além do escopo dos objetivos.
-
 
 \section{METODOLOGIA}
 \label{sec:metodologia}

@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "kind": "review-thread",
   "id": "de84ed6d-6ec3-4e06-976b-abbb51b790a3",
-  "revision": 1,
+  "revision": 4,
   "resource": {
     "path": "projeto_de_pesquisa.tex"
   },
@@ -10,11 +10,11 @@
     "kind": "text",
     "range": {
       "start": {
-        "line": 309,
+        "line": 310,
         "character": 0
       },
       "end": {
-        "line": 312,
+        "line": 313,
         "character": 326
       }
     },
@@ -35,6 +35,6 @@
   ],
   "tags": [],
   "createdAt": "2026-11-09T20:11:37.546Z",
-  "updatedAt": "2026-11-09T20:11:37.560Z",
+  "updatedAt": "2026-11-16T17:43:28.914Z",
   "metadata": {}
 }

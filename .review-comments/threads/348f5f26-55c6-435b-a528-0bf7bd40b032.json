@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "kind": "review-thread",
+  "id": "348f5f26-55c6-435b-a528-0bf7bd40b032",
+  "revision": 2,
+  "resource": {
+    "path": "projeto_de_pesquisa.tex"
+  },
+  "anchor": {
+    "kind": "text",
+    "range": {
+      "start": {
+        "line": 266,
+        "character": 0
+      },
+      "end": {
+        "line": 266,
+        "character": 0
+      }
+    },
+    "snapshot": "",
+    "before": "e\n% você quer defender e se o texto não promete funcionalidades além do escopo dos objetivos.\n\n\n",
+    "after": "\\section{METODOLOGIA}\n\\label{sec:metodologia}\n\nA metodologia descreve detalhadamente os procedim",
+    "stale": true
+  },
+  "status": "open",
+  "comments": [
+    {
+      "id": "1c4fb425-92d5-4917-ba36-2fec3cbb4bd3",
+      "body": "DSR - REFERENCIA - SIMON, H. A. The sciences of the artificial. 3. ed., [Nachdr.] ed. Cambridge, Mass.: MIT\nPress, 1996.",
+      "author": "Reviewer",
+      "createdAt": "2026-11-16T17:39:00.125Z",
+      "updatedAt": "2026-11-16T17:39:00.125Z"
+    }
+  ],
+  "tags": [],
+  "createdAt": "2026-11-16T17:39:00.125Z",
+  "updatedAt": "2026-11-16T17:43:28.931Z",
+  "metadata": {}
+}
