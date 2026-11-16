@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "kind": "review-thread",
+  "id": "9e4423a1-3ea2-4bb4-ba9e-e112d9c12365",
+  "revision": 1,
+  "resource": {
+    "path": "projeto_de_pesquisa.tex"
+  },
+  "anchor": {
+    "kind": "text",
+    "range": {
+      "start": {
+        "line": 240,
+        "character": 0
+      },
+      "end": {
+        "line": 257,
+        "character": 12
+      }
+    },
+    "snapshot": "\n\\begin{quadro}[htbp]\n    \\centering\n    \\caption{Comparação entre sistemas relacionados e a plataforma proposta}\n    \\label{qua:relacionados}\n    \\begin{tabularx}{\\textwidth}{|p{2.6cm}|p{3.2cm}|X|X|}\n        \\hline\n        \\textbf{Sistema} & \\textbf{Escopo} & \\textbf{Características relatadas} & \\textbf{Diferença em relação à proposta} \\\\\n        \\hline\n        Herbário Virtual Reflora \\cite{forzza2015reflora} & Imagens e dados de exsicatas de herbários nacionais e estrangeiros & Alta resolução; consulta pública; mais de um milhão de imagens em 2015 & Escala nacional e internacional; não gerencia o livro de tombo nem a rotina de curadoria do herbário do IFPI \\\\ \\hline\n        Jabot \\cite{silva2019agrupamentos} & Gerenciamento de coleções do Jardim Botânico do Rio de Janeiro & PHP e PostgreSQL; PostGIS para validação geográfica; cerca de 760 mil registros & Sistema institucional de grande porte; a proposta é uma plataforma enxuta, voltada a um herbário didático \\\\ \\hline\n        Symbiota \\cite{gries2014symbiota} & Plataforma web para comunidades de dados de biodiversidade & Baseada em espécimes-testemunho; recursos de troca de dados & Plataforma genérica e configurável; a proposta é desenvolvida sob medida para o acervo do campus \\\\ \\hline\n        INCT-HVFF e \\textit{speciesLink} \\cite{incthvff2026} & Rede nacional de dados de herbários brasileiros e de coletas depositadas no exterior & Dados livres, abertos e integrados; repatriamento de dados; Herbário Virtual via \\textit{speciesLink} & Integra dezenas de instituições; a proposta atende a um único herbário e à sua rotina de cadastro \\\\ \\hline\n        Herbário Virtual Glaziou \\cite{glaziou2026} & Exsicatas coletadas por Glaziou, de dois museus & Informações e imagens das exsicatas; usa a rede \\textit{speciesLink} & Acervo histórico e temático; a proposta cobre todo o acervo do herbário do campus \\\\ \\hline\n        Herbario Digital (Chile) \\cite{herbariodigital2026} & Flora vascular do Chile & Catálogo taxonômico, busca de imagens, espécimes e mapa & Foco em outro país; serve de referência de organização da consulta \\\\ \\hline\n    \\end{tabularx}\n    \\fonte{Elaborado pelo autor, com base nas páginas e nos autores citados.}\n\\end{quadro}",
+    "before": "o foi incluído.\n\nO \\autoref{qua:relacionados} compara esses sistemas com a plataforma proposta.\n",
+    "after": "\n\nEsses sistemas mostram que a informatização de herbários é uma prática consolidada e que o Pos",
+    "stale": false
+  },
+  "status": "open",
+  "comments": [
+    {
+      "id": "61417e10-12ed-41ea-a9f8-cb5ed019058a",
+      "body": "Muito bom",
+      "author": "Reviewer",
+      "createdAt": "2026-11-09T20:10:28.697Z",
+      "updatedAt": "2026-11-09T20:10:28.697Z"
+    }
+  ],
+  "tags": [],
+  "createdAt": "2026-11-09T20:10:28.697Z",
+  "updatedAt": "2026-11-09T20:10:28.711Z",
+  "metadata": {}
+}
