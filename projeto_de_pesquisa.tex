@@ -28,6 +28,9 @@
 \input{config/config}   % configurações de formatação
 \input{estrutura/dados} % dados institucionais e do projeto
 
+% Espaço acima e abaixo de quadros, tabelas e figuras fixados no texto com [H]
+\setlength{\intextsep}{14pt plus 2pt minus 2pt}
+
 % ========================================================================
 % INÍCIO DO DOCUMENTO
 % ========================================================================
@@ -128,14 +131,6 @@ O Herbário do IFPI -- Campus Floriano teve origem nas primeiras exsicatas produ
 \subsection{COLETA, HERBORIZAÇÃO E CATALOGAÇÃO DO ACERVO} 
 \label{subsec:coleta-catalogacao}
 
-% TODO (André): pedir à equipe do Herbário os manuais/protocolos que eles seguem
-% (ficha de coleta, livro de registro, regras de tombamento, modelo de etiqueta).
-% Esta subseção foi escrita com base no guia do INSA (Freitas et al., 2021), em
-% Gasper et al. (2021), Paton et al. (2026) e Lopes (2023); quando receber os
-% manuais, complemente/ajuste os trechos abaixo e acrescente as referências
-% no referencias.bib.
-
-
 % https://www.researchgate.net/profile/Rodrigo-Polisel
 %https://www.researchgate.net/profile/Suzana-Ursi
 
@@ -157,10 +152,11 @@ A curadoria não termina no tombamento. \citeonline{paton2026digitisation} obser
 
 No Herbário do IFPI -- Campus Floriano, as coordenadoras adquiriram por conta própria um curso de introdução à taxonomia de campo para treinar os discentes nas atividades de herborização, e o registro dos exemplares era mantido em um livro de registro criado em 2007 \cite{lopes2023herbario}. O \autoref{qua:etapas} sintetiza as etapas descritas e as informações geradas em cada uma delas, que são justamente os dados que uma plataforma de catalogação precisa representar.
 
-\begin{quadro}[htbp]
+\begin{quadro}[H]
     \centering
     \caption{Etapas do tratamento do material botânico e informações geradas}
     \label{qua:etapas}
+    \small
     \begin{tabularx}{\textwidth}{|p{3cm}|X|X|}
         \hline
         \textbf{Etapa} & \textbf{O que é feito} & \textbf{Informações geradas} \\
@@ -181,6 +177,16 @@ Tradicionalmente, o acesso às informações de uma exsicata exige o manuseio do
 
 A informatização dos herbários responde a esse problema, e o processo ainda está em curso no Brasil. No levantamento de \citeonline{gasper2020herbarios}, apenas 32\% das coleções estavam totalmente digitalizadas e 65 delas (46,7\%) não possuíam nenhuma imagem de seus espécimes; entre os sistemas de gerenciamento, o Brahms era citado por 35\% dos curadores, seguido pelas planilhas eletrônicas (28\%) e pelo Jabot (17\%). Onde a digitalização avançou, o ganho de acesso é expressivo: os pesquisadores passam a consultar milhões de registros e imagens de espécimes de qualquer lugar com conexão à internet, dispensando o deslocamento e o envio de material \cite{iwanycki2026promise}. \citeonline{gasper2021digitalizacao} descrevem esse fluxo em herbários brasileiros de pequeno porte, no qual a digitação dos dados de etiqueta é seguida da digitalização de cada amostra com câmera profissional, apoiada por software de banco de dados e por leitor de código de barras; o esforço conjunto de cinco coleções disponibilizou 118.000 imagens de espécimes on-line. \citeonline{thompson2023digitisation} também examinam o fluxo de digitalização em um herbário universitário.
 
+A \autoref{fig:exsicata-digital} mostra uma exsicata digitalizada do herbário FURB, um dos acervos envolvidos nesse esforço: a imagem registra o exemplar e a sua etiqueta e permite a consulta sem o manuseio do material físico.
+
+\begin{figure}[H]
+    \centering
+    \caption{Exsicata digitalizada do herbário FURB}
+    \label{fig:exsicata-digital}
+    \includegraphics[width=0.5\textwidth]{img/exsicata_digital.png}
+    \fonte{Adaptado de \citeonline[p.~692]{gasper2021digitalizacao}.}
+\end{figure}
+
 A relação entre o acervo físico e o acervo digital não é de substituição. \citeonline{paton2026digitisation} argumentam que a digitalização amplia o valor dos espécimes físicos, mas que estes permanecem fundamentais para o estudo de características que ainda não são capturadas digitalmente: embora imagens em alta resolução forneçam boa parte da informação de que os taxonomistas precisam para o seu trabalho, os pesquisadores com frequência ainda necessitam examinar o material. A plataforma proposta nesta pesquisa se situa, portanto, no primeiro conjunto de usos, o de organizar e disponibilizar os dados e as imagens do próprio acervo do Herbário do IFPI -- Campus Floriano, apoiando a rotina de registro e reduzindo o manuseio nas consultas que o meio digital já atende, sem pretender substituir o exame do exemplar quando ele for necessário.
 
 Para que os dados possam ser compartilhados, é útil adotar padrões. O \textit{Darwin Core} é um padrão do \textit{Biodiversity Information Standards} (TDWG) que oferece um conjunto de termos para descrever e compartilhar dados sobre a ocorrência de organismos e sobre os espécimes de coleções biológicas \cite{tdwg2009darwincore}. \citeonline{heberling2022bigdata} o situa entre os desenvolvimentos centrais da informática da biodiversidade, por constituir um conjunto compartilhado de termos definidos de modo explícito que viabiliza a integração de bilhões de registros e que continua a evoluir conforme as necessidades da comunidade. Adotá-lo como referência para a modelagem dos campos da plataforma facilita uma eventual integração futura com redes de herbários.
@@ -196,8 +202,6 @@ Um processo de software é um conjunto de atividades que levam à produção de 
 Entre as abordagens iterativas, o \textit{Scrum} é um arcabouço leve que ajuda pessoas, equipes e organizações a gerar valor por meio de soluções adaptativas para problemas complexos \cite{schwaber2020scrum}. Ele se baseia no empirismo, ou seja, na tomada de decisão a partir do que se observa, e em três pilares: transparência, inspeção e adaptação \cite{schwaber2020scrum}. O trabalho é organizado em \textit{Sprints}, ciclos de no máximo um mês em que se produz um incremento utilizável do produto, e cada \textit{Sprint} contém eventos como o planejamento (\textit{Sprint Planning}), a reunião diária (\textit{Daily Scrum}), a revisão (\textit{Sprint Review}) e a retrospectiva (\textit{Sprint Retrospective}) \cite{schwaber2020scrum}. Os requisitos ficam em uma lista ordenada, o \textit{Product Backlog}, de onde se seleciona o que será feito em cada \textit{Sprint} (\textit{Sprint Backlog}) \cite{schwaber2020scrum}.
 
 Esse tipo de processo é adequado a este projeto porque os requisitos do herbário, como os campos da ficha da exsicata e a forma de consulta pelos usuários, não estão totalmente definidos no início e tendem a ser refinados à medida que a equipe do herbário avalia os primeiros incrementos. O próprio guia reconhece que a equipe do Scrum é pequena, tipicamente com dez pessoas ou menos \cite{schwaber2020scrum}, o que permite adaptar o arcabouço a um projeto acadêmico individual, com o orientador e a equipe do herbário atuando como fontes dos requisitos e da avaliação dos incrementos.
-% VERIFICAR/ALINHAR com o orientador: (1) se o Scrum será de fato o processo adotado
-% (a seção METODOLOGIA ainda não o menciona); (2) os papéis acima; (3) a duração das Sprints.
 
 \subsection{TECNOLOGIAS ESCOLHIDAS E ALTERNATIVAS}
 \label{subsec:tecnologias}
@@ -214,6 +218,7 @@ O \autoref{qua:tecnologias} compara as tecnologias escolhidas com alternativas u
     \centering
     \caption{Tecnologias escolhidas e alternativas consideradas}
     \label{qua:tecnologias}
+    \small
     \begin{tabularx}{\textwidth}{|p{2.2cm}|p{2.8cm}|p{3cm}|X|}
         \hline
         \textbf{Camada} & \textbf{Escolha} & \textbf{Alternativas} & \textbf{Justificativa} \\
@@ -225,10 +230,6 @@ O \autoref{qua:tecnologias} compara as tecnologias escolhidas com alternativas u
     \fonte{Elaborado pelo autor, com base em \citeonline{nodejs2026about}, \citeonline{typescript2026}, \citeonline{react2026learn}, \citeonline{postgresql2026about}, \citeonline{postgis2026} e \citeonline{silva2017jabot}.}
 \end{quadro}
 
-% VERIFICAR: as alternativas do quadro (Laravel, Django, MySQL, MongoDB, Angular, Vue.js)
-% foram citadas só como opções usuais, sem fonte consultada. Se quiser argumentar que uma
-% delas é pior em algum ponto, busque referência (documentação oficial ou livro) para sustentar.
-
 \subsection{ESTUDOS E SISTEMAS RELACIONADOS}
 \label{subsec:estudos-relacionados}
 
@@ -236,15 +237,13 @@ Existem sistemas voltados à informatização e à disponibilização de acervos
 
 Há ainda iniciativas que integram vários acervos. O Instituto Nacional de Ciência e Tecnologia Herbário Virtual da Flora e dos Fungos (INCT-HVFF), aprovado em 2008 e em atividade desde 2009, tem como objetivos disponibilizar dados de herbários de forma livre, aberta e integrada, repatriar dados de coletas brasileiras depositadas no exterior e melhorar a qualidade dos acervos dos herbários do país, e disponibiliza o Herbário Virtual por meio da rede \textit{speciesLink} \cite{incthvff2026}. O Herbário Virtual Glaziou usa essa mesma rede para reunir informações e imagens das exsicatas coletadas por Auguste Glaziou no Brasil e depositadas no Museu Nacional do Rio de Janeiro e no Museu Nacional de História Natural de Paris \cite{glaziou2026}. Fora do Brasil, o Herbario Digital chileno oferece catálogo taxonômico, busca de imagens, seção de espécimes e mapa sobre a flora vascular do país \cite{herbariodigital2026}.
 
-% VERIFICAR: as páginas do INCT-HVFF, Glaziou e Herbario Digital não informam o número
-% de registros; se quiser números, abra os sites no navegador e confira (data de acesso 12 out. 2026).
-
 O \autoref{qua:relacionados} compara esses sistemas com a plataforma proposta.
 
-\begin{quadro}[htbp]
+\begin{quadro}[H]
     \centering
     \caption{Comparação entre sistemas relacionados e a plataforma proposta}
     \label{qua:relacionados}
+    \small
     \begin{tabularx}{\textwidth}{|p{2.6cm}|p{3.2cm}|X|X|}
         \hline
         \textbf{Sistema} & \textbf{Escopo} & \textbf{Características relatadas} & \textbf{Diferença em relação à proposta} \\
@@ -260,58 +259,136 @@ O \autoref{qua:relacionados} compara esses sistemas com a plataforma proposta.
 \end{quadro}
 
 Esses sistemas mostram que a informatização de herbários é uma prática consolidada e que o PostgreSQL, tecnologia escolhida para esta proposta, é usado em um sistema reconhecido da área, o Jabot. Eles também deixam uma lacuna que a presente proposta busca preencher: são soluções de grande porte ou de propósito geral, voltadas a instituições de pesquisa, enquanto o Herbário do IFPI -- Campus Floriano é um herbário didático de acervo pequeno, cujo registro ainda depende de um livro e dos próprios exemplares \cite{lopes2023herbario}. O caso do Jabot ilustra bem essa distância: o sistema é sustentado por um \textit{datacenter} institucional, com sala de equipamentos de energia ininterrupta, gerador a diesel e sistema de refrigeração dedicado, e o seu código-fonte não foi disponibilizado de forma aberta, de modo que instituições parceiras o utilizam na infraestrutura do próprio Jardim Botânico, no modelo de \textit{software} como serviço \cite{silva2017jabot}. Em sentido inverso, a experiência de \citeonline{gasper2021digitalizacao} com herbários brasileiros de pequeno porte mostra que um bom \textit{software} de banco de dados e o preparo prévio das amostras permitem avançar na informatização mesmo em acervos modestos. A proposta se diferencia por oferecer uma plataforma simples, mantida pela própria instituição, que concentra o cadastro e a consulta das exsicatas e que pode, no futuro, adotar padrões como o \textit{Darwin Core} para facilitar o intercâmbio de dados com redes maiores.
-% VERIFICAR com o orientador: confirmar se "enxuta/sob medida" é o posicionamento que
-% você quer defender e se o texto não promete funcionalidades além do escopo dos objetivos.
 
 \section{METODOLOGIA}
 \label{sec:metodologia}
 
-A metodologia descreve detalhadamente os procedimentos que serão adotados para a realização da pesquisa. O texto deve manter um tratamento impessoal e objetivo em conformidade com o \citeonline{IFPI_Manual_2024}.
+Esta seção descreve os procedimentos que serão adotados para alcançar os objetivos propostos. São apresentados a caracterização da pesquisa, o método \textit{Design Science Research} (DSR) e seus fundamentos, as etapas de execução, os participantes, as técnicas de coleta e de análise dos dados e os aspectos éticos.
 
 \subsection{CARACTERIZAÇÃO DA PESQUISA}
 \label{subsec:caracterizacao}
 
-Esta pesquisa pode ser caracterizada, quanto aos seus objetivos, como EXPLORATÓRIA, uma vez que busca proporcionar maior familiaridade com o problema. Segundo \citeonline{gil2019}, pesquisas dessa natureza têm como objetivo o aprimoramento de ideias ou a descoberta de intuições.
+Quanto à natureza, a pesquisa é aplicada, pois busca produzir um artefato, uma plataforma web, para resolver um problema concreto do Herbário do IFPI -- Campus Floriano: a dependência das informações do acervo em relação ao material físico e ao livro de registro (\autoref{subsec:problema}).
 
-Quanto à abordagem, trata-se de uma pesquisa QUANTITATIVA, pois adota métodos estatísticos para mensurar os dados coletados. \citeonline{creswell2018} destaca que a abordagem mista ou quantitativa é adequada quando se pretende testar teorias objetivas examinando a relação entre variáveis.
+Quanto aos objetivos, a pesquisa caracteriza-se como exploratória. Segundo \citeonline{gil2019}, pesquisas dessa natureza buscam proporcionar maior familiaridade com o problema e têm como objetivo o aprimoramento de ideias ou a descoberta de intuições. Esse caráter é adequado porque os requisitos da plataforma ainda não estão definidos e serão construídos com a equipe do herbário ao longo do trabalho.
 
-Em relação aos procedimentos técnicos, será realizada uma PESQUISA BIBLIOGRÁFICA, que, conforme \citeonline{marconi2017}, caracteriza-se pelo levantamento de contribuições teóricas já publicadas sobre o tema.
+Quanto à abordagem, a pesquisa é predominantemente qualitativa, complementada por dados quantitativos descritivos. Conforme \citeonline{creswell2018}, a abordagem qualitativa destina-se a explorar e compreender o significado que indivíduos ou grupos atribuem a um problema; neste trabalho, ela orienta o levantamento das necessidades da equipe do herbário e a análise das percepções dos participantes sobre a plataforma. Os dados quantitativos, como a taxa de conclusão de tarefas e a pontuação de usabilidade obtidas na avaliação, serão tratados por estatística descritiva, sem pretensão de generalização.
+% VERIFICAR: a entrada creswell2018 é a tradução "Projeto de pesquisa" (Artmed); confira no
+% livro o trecho que define a pesquisa qualitativa e, se possível, o ano e a edição da sua cópia.
 
-\begin{figure}[H]
+Quanto aos procedimentos técnicos, adota-se a DSR como método principal, apoiada por pesquisa bibliográfica, que, conforme \citeonline{marconi2017}, caracteriza-se pelo levantamento de contribuições teóricas já publicadas sobre o tema, e por análise documental dos registros do próprio herbário.
+
+\subsection{\textit{DESIGN SCIENCE RESEARCH}}
+\label{subsec:dsr}
+
+A DSR tem como base a distinção proposta por \citeonline{simon1996} entre as ciências naturais e as ciências do artificial. Para o autor, uma ciência natural é um corpo de conhecimento sobre uma classe de objetos ou fenômenos do mundo, preocupado em descrever como as coisas são; o mundo em que se vive hoje, porém, é muito mais artificial, isto é, produzido pelo ser humano, do que natural. Os objetos artificiais são sintetizados pelo ser humano, podem ser caracterizados em termos de funções, objetivos e adaptação e, sobretudo quando estão sendo projetados, são discutidos em termos imperativos, ou seja, de como deveriam ser, e não apenas descritivos \cite{simon1996}. Uma ciência do artificial ocupa-se, portanto, da síntese, e não apenas da análise.
+
+\citeonline{simon1996} propõe compreender o artefato como um ponto de encontro, uma interface, entre um ambiente interno, formado pela substância e pela organização do próprio artefato, e um ambiente externo, formado pelo meio em que ele opera. Se o ambiente interno for adequado ao externo, ou vice-versa, o artefato cumprirá o propósito para o qual foi concebido \cite{simon1996}. Nesta pesquisa, o ambiente interno corresponde à organização da plataforma: o modelo de dados, o \textit{back-end}, o \textit{front-end} e as tecnologias descritas na \autoref{subsec:tecnologias}. O ambiente externo corresponde ao herbário: a rotina de coleta, herborização e tombamento (\autoref{subsec:coleta-catalogacao}), a equipe responsável, os estudantes e visitantes que consultam o acervo e as condições do próprio campus. O êxito da plataforma depende da adequação entre esses dois ambientes, e é essa adequação que as etapas de demonstração e avaliação procuram verificar.
+
+O autor também destaca o caráter empírico do estudo de sistemas computacionais. Ao tratar dos primeiros sistemas de tempo compartilhado, \citeonline{simon1996} relata que a teoria disponível não permitia prever como eles se comportariam diante das demandas dos usuários, de modo que o caminho foi construí-los, observar seu comportamento e modificá-los e aperfeiçoá-los em estágios sucessivos. Essa ideia sustenta a natureza iterativa adotada neste trabalho: a plataforma será construída em incrementos e ajustada a partir da observação de seu uso pela equipe do herbário.
+
+A partir desses fundamentos, \citeonline{dresch2015dsr} apresentam a DSR como o método que fundamenta e operacionaliza a pesquisa quando o que se pretende alcançar é um artefato ou uma prescrição, isto é, quando o propósito é projetar soluções para problemas reais, e não apenas descrever ou explicar fenômenos. É o caso desta pesquisa, cujo resultado principal é uma plataforma web construída para uma necessidade identificada no campus.
+
+Para conduzir a pesquisa, adota-se o processo proposto por \citeonline{peffers2007dsrm}, que organiza a DSR em seis atividades: identificação do problema e motivação; definição dos objetivos da solução; projeto e desenvolvimento; demonstração; avaliação; e comunicação. Embora apresentadas em sequência, as atividades não precisam ser percorridas sempre na mesma ordem: a pesquisa pode ter diferentes pontos de entrada, e os resultados da avaliação e da comunicação podem levar o pesquisador de volta à definição dos objetivos ou ao projeto e desenvolvimento \cite{peffers2007dsrm}. Neste trabalho, o ponto de entrada é o próprio problema, já documentado no histórico do herbário \cite{lopes2023herbario}.
+
+\subsection{ETAPAS DA PESQUISA}
+\label{subsec:etapas}
+
+As seis atividades propostas por \citeonline{peffers2007dsrm} foram adotadas como etapas da pesquisa e relacionadas aos objetivos específicos (\autoref{subsubsec:objetivos-especificos}). O \autoref{qua:etapas-dsr} sintetiza essa correspondência, e as subseções seguintes descrevem cada etapa.
+
+\begin{quadro}[H]
     \centering
-    \caption{Esquema metodológico da pesquisa}
-    \includegraphics[width=0.85\textwidth]{img/tema do tcc.png}
-    \fonte{Adaptado de \citeonline{Moretti_ComoEscolherTemaTCC_2024}}
-    \label{fig:esquema_metodologico}
-\end{figure}
+    \caption{Etapas da pesquisa segundo a DSR, objetivos específicos, técnicas e produtos}
+    \label{qua:etapas-dsr}
+    \small
+    \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{3cm}|>{\raggedright\arraybackslash}p{1.8cm}|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+        \hline
+        \textbf{Etapa (DSR)} & \textbf{Objetivos} & \textbf{Técnicas e atividades} & \textbf{Produtos} \\
+        \hline
+        1. Identificação do problema e motivação & -- & Pesquisa bibliográfica; análise do relato de \citeonline{lopes2023herbario}; conversa inicial com a equipe do herbário & Problema e justificativa delimitados \\ \hline
+        2. Definição dos objetivos da solução & 1 & Entrevista semiestruturada; análise documental; observação; comparação dos campos com o \textit{Darwin Core} & Requisitos da plataforma e \textit{Product Backlog} inicial \\ \hline
+        3. Projeto e desenvolvimento & 2, 3 e 4 & Modelagem de dados; desenvolvimento em \textit{Sprints}; revisões dos incrementos com a equipe & Modelo de dados; área de gerenciamento; área pública de consulta \\ \hline
+        4. Demonstração & 3 e 4 & Cadastro de exsicatas reais do acervo em ambiente de testes & Plataforma com registros do acervo \\ \hline
+        5. Avaliação & 5 & Testes com roteiro de tarefas; observação; questionário SUS; perguntas abertas & Resultados da avaliação e ajustes no \textit{Product Backlog} \\ \hline
+        6. Comunicação & -- & Redação do trabalho; documentação técnica; defesa & Trabalho de conclusão, documentação e manual de uso \\ \hline
+    \end{tabularx}
+    \fonte{Elaborado pelo autor, com base em \citeonline{peffers2007dsrm}.}
+\end{quadro}
 
-\subsection{POPULAÇÃO E AMOSTRA}
-\label{subsec:populacao-amostra}
+\subsubsection{Etapa 1: identificação do problema e motivação}
+\label{subsubsec:etapa1}
 
-A população desta pesquisa é constituída por [DEFINIR A POPULAÇÃO]. Para a definição da amostra, será utilizada a técnica de [TIPO DE AMOSTRAGEM], que, segundo \citeonline{hair2019}, é adequada para garantir a representatividade dos dados.
+Nesta etapa, define-se o problema de pesquisa e justifica-se o valor de uma solução \cite{peffers2007dsrm}. Ela foi iniciada na elaboração deste projeto, por meio da pesquisa bibliográfica e do relato de \citeonline{lopes2023herbario}, que documenta o registro do acervo em livro e nas etiquetas das exsicatas e a perda de cerca de 300 exemplares por deterioração (\autoref{subsec:problema} e \autoref{subsec:justificativa}). A etapa será concluída com uma conversa inicial com a equipe do herbário, para confirmar o problema e o escopo da plataforma.
 
-O tamanho da amostra foi calculado considerando [CRITÉRIOS DE CÁLCULO], resultando em [NÚMERO] participantes/elementos.
+\subsubsection{Etapa 2: definição dos objetivos da solução}
+\label{subsubsec:etapa2}
+
+Nesta etapa, os objetivos da solução são inferidos a partir do problema e do que é viável realizar \cite{peffers2007dsrm}. Ela corresponde ao primeiro objetivo específico, de compreender o processo de coleta, identificação, armazenamento e consulta das exsicatas. Serão empregadas três técnicas: entrevista semiestruturada com a equipe do herbário; análise documental do livro de registro, das etiquetas e das fichas e manuais utilizados pela equipe; e observação das atividades de catalogação e de consulta ao acervo.
+
+As informações obtidas serão registradas como requisitos funcionais e não funcionais, escritos na forma de histórias de usuário, que comporão o \textit{Product Backlog} inicial \cite{schwaber2020scrum}. Os campos de informação identificados também serão comparados aos termos do \textit{Darwin Core} \cite{tdwg2009darwincore}, para que a modelagem possa facilitar uma eventual integração futura com redes de dados de biodiversidade.
+
+\subsubsection{Etapa 3: projeto e desenvolvimento}
+\label{subsubsec:etapa3}
+
+Nesta etapa, determinam-se a funcionalidade e a arquitetura do artefato e procede-se à sua construção \cite{peffers2007dsrm}. Ela abrange o segundo, o terceiro e o quarto objetivos específicos e será conduzida com o \textit{Scrum} (\autoref{subsec:processo-software}), adaptado a um projeto individual: o trabalho será organizado em \textit{Sprints} de duas semanas, o autor atuará como desenvolvedor e responsável pela ordenação do \textit{Product Backlog}, a equipe do herbário atuará como fonte dos requisitos e avaliadora dos incrementos, e o orientador acompanhará o andamento ao longo das \textit{Sprints}.
+% VERIFICAR/ALINHAR com o orientador: duração das Sprints (duas semanas) e papéis.
+
+O desenvolvimento seguirá a ordem dos objetivos específicos. Primeiro, será elaborado o modelo de dados, com o modelo entidade-relacionamento e sua implementação no PostgreSQL com a extensão PostGIS (objetivo 2). Em seguida, será implementada a área de gerenciamento do acervo, com autenticação, cadastro, edição e associação de imagens às exsicatas (objetivo 3). Por fim, será implementada a área pública de consulta, com busca e visualização dos registros (objetivo 4). Ao final de cada \textit{Sprint}, sempre que possível, o incremento produzido será apresentado à equipe do herbário em uma revisão (\textit{Sprint Review}) \cite{schwaber2020scrum}, o que reproduz o ciclo de construir, observar e aperfeiçoar descrito por \citeonline{simon1996}. O código-fonte será versionado com Git.
+
+\subsubsection{Etapa 4: demonstração}
+\label{subsubsec:etapa4}
+
+Nesta etapa, demonstra-se o uso do artefato para resolver uma ou mais instâncias do problema \cite{peffers2007dsrm}. A plataforma será implantada em um ambiente de testes e alimentada com um conjunto de exsicatas reais do acervo, selecionado com a equipe do herbário, incluindo os dados das etiquetas e do livro de registro e fotografias dos exemplares. A demonstração deverá mostrar que os registros passam a existir de forma independente do material físico e podem ser consultados sem acesso presencial ao herbário.
+
+\subsubsection{Etapa 5: avaliação}
+\label{subsubsec:etapa5}
+
+Nesta etapa, observa-se e mede-se o quanto o artefato contribui para a solução do problema, comparando os objetivos definidos com os resultados observados no uso \cite{peffers2007dsrm}. Ela corresponde ao quinto objetivo específico e será realizada com dois grupos (\autoref{subsec:participantes}): a equipe do herbário avaliará a área de gerenciamento, e os visitantes avaliarão a área pública de consulta.
+
+Cada participante executará um roteiro de tarefas representativas, sob observação. Para a equipe, as tarefas incluirão cadastrar uma exsicata, corrigir sua identificação, associar uma imagem e localizar um registro pelo número de tombo; para os visitantes, buscar exsicatas por nome científico ou por família e visualizar a ficha e a imagem de um exemplar. Após as tarefas, os participantes responderão ao questionário \textit{System Usability Scale} (SUS) \cite{brooke1996sus} e a perguntas abertas sobre dificuldades e sugestões.
+
+A plataforma será considerada adequada à medida que atender aos requisitos definidos na Etapa 2, permitir a conclusão das tarefas pelos participantes e obter percepções favoráveis de uso. Os problemas encontrados serão registrados no \textit{Product Backlog} e, se o cronograma permitir, tratados em um novo ciclo de projeto e desenvolvimento, conforme a iteração prevista por \citeonline{peffers2007dsrm}.
+
+\subsubsection{Etapa 6: comunicação}
+\label{subsubsec:etapa6}
+
+Nesta etapa, comunicam-se o problema, o artefato, sua utilidade e novidade, o rigor de seu projeto e sua efetividade a pesquisadores e a outros públicos interessados \cite{peffers2007dsrm}. A comunicação ocorrerá por meio do trabalho de conclusão de curso e de sua defesa pública. Além disso, a plataforma será entregue à equipe do herbário com documentação técnica, contendo instruções de instalação e a descrição do modelo de dados, e com um manual de uso, para facilitar sua manutenção e ampliação em trabalhos futuros.
+
+\subsection{PARTICIPANTES}
+\label{subsec:participantes}
+
+A pesquisa envolverá dois grupos de participantes, selecionados por amostragem não probabilística. O primeiro grupo é formado pela equipe responsável pelo herbário, composta pelas coordenadoras e pelos discentes que atuam nas atividades do acervo. Esse grupo foi escolhido de forma intencional, por conhecer a rotina de catalogação, e participará das Etapas 1, 2, 3 e 5.
+
+O segundo grupo é formado por visitantes, representados por estudantes do campus, com prioridade para os do curso de Ciências Biológicas, que utilizam o herbário como espaço de aprendizagem prática \cite{lopes2023herbario}. Esses participantes serão recrutados por conveniência, e estima-se a participação de cinco a dez estudantes na Etapa 5. Como a abordagem é predominantemente qualitativa, não se busca representatividade estatística, e sim a identificação de problemas de uso e de percepções sobre a plataforma.
+% VERIFICAR/ALINHAR com o orientador: número de visitantes e se haverá participantes
+% externos ao campus (ex.: pesquisadores de outras instituições).
 
 \subsection{TÉCNICAS DE COLETA DE DADOS}
 \label{subsec:coleta-dados}
 
-A coleta de dados será realizada através de [INSTRUMENTOS DE COLETA], que permitirão obter informações sobre [TIPO DE INFORMAÇÕES].
+Os dados serão coletados por meio dos seguintes instrumentos, cujos roteiros constarão em apêndice:
 
-Os instrumentos escolhidos foram:
 \begin{itemize}
-    \item \textbf{[INSTRUMENTO 1]:} [DESCRIÇÃO E JUSTIFICATIVA];
-    \item \textbf{[INSTRUMENTO 2]:} [DESCRIÇÃO E JUSTIFICATIVA].
+    \item \textbf{Entrevista semiestruturada:} realizada com a equipe do herbário na Etapa 2, com um roteiro de perguntas sobre a coleta, a identificação, o tombamento, o armazenamento e a consulta das exsicatas, permitindo aprofundar temas que surgirem durante a conversa;
+    \item \textbf{Análise documental:} exame do livro de registro, das etiquetas das exsicatas e das fichas e manuais utilizados pela equipe, para identificar os campos de informação efetivamente registrados;
+    \item \textbf{Observação:} acompanhamento das atividades de catalogação e de consulta ao acervo na Etapa 2 e do uso da plataforma nos testes da Etapa 5, com registro das dificuldades percebidas;
+    \item \textbf{Roteiro de tarefas:} conjunto de tarefas representativas executadas pelos participantes na Etapa 5, com registro da conclusão ou não de cada tarefa;
+    \item \textbf{Questionário SUS:} instrumento composto por dez afirmações respondidas em escala de cinco pontos, que resulta em uma pontuação de 0 a 100 para a usabilidade percebida do sistema \cite{brooke1996sus}, complementado por perguntas abertas sobre dificuldades e sugestões.
 \end{itemize}
 
 \subsection{ANÁLISE DOS DADOS}
 \label{subsec:analise-dados}
 
-Os dados coletados serão analisados utilizando [TÉCNICAS DE ANÁLISE]. Para dados quantitativos, utilizar-se-á estatística descritiva e inferencial. Os dados qualitativos serão submetidos à análise de conteúdo.
+Os dados qualitativos, obtidos nas entrevistas, na análise documental, nas observações e nas perguntas abertas, serão organizados em categorias temáticas, como necessidades da equipe, campos de informação do registro, dificuldades de uso e sugestões. Na Etapa 2, essas categorias darão origem aos requisitos da plataforma; na Etapa 5, aos ajustes registrados no \textit{Product Backlog}.
+
+Os dados quantitativos serão analisados por estatística descritiva. Para o roteiro de tarefas, será calculada a taxa de conclusão de cada tarefa. Para o questionário SUS, a pontuação de cada participante será obtida conforme o procedimento de \citeonline{brooke1996sus}: nos itens ímpares, subtrai-se 1 da resposta; nos itens pares, subtrai-se a resposta de 5; a soma dessas contribuições é multiplicada por 2,5. Serão apresentadas as pontuações individuais e a média de cada grupo.
+
+Por fim, os resultados serão confrontados com os requisitos definidos na Etapa 2, para avaliar a adequação entre o ambiente interno da plataforma e o ambiente externo do herbário, nos termos de \citeonline{simon1996}.
 
 \subsection{ASPECTOS ÉTICOS}
 \label{subsec:aspectos-eticos}
 
-Esta pesquisa será desenvolvida respeitando os princípios éticos estabelecidos pela Resolução nº 466/2012 do Conselho Nacional de Saúde. [SE APLICÁVEL: O projeto será submetido ao Comitê de Ética em Pesquisa (CEP) antes da coleta de dados]. Todos os participantes assinarão o Termo de Consentimento Livre e Esclarecido (TCLE).
+A participação na pesquisa será voluntária, e os participantes poderão desistir a qualquer momento, sem prejuízo. Todos assinarão o Termo de Consentimento Livre e Esclarecido (TCLE), e suas identidades serão preservadas na apresentação dos resultados. Os dados coletados serão utilizados exclusivamente para os fins desta pesquisa, e as fotografias produzidas se restringirão às exsicatas, sem registro de imagem dos participantes.
 
 
 \section{RESULTADOS ESPERADOS}
@@ -335,32 +412,42 @@ Esta seção discrimina os recursos necessários para viabilizar a execução do
 \subsection{RECURSOS HUMANOS}
 \label{subsec:recursos-humanos}
 
-[DESCREVER A EQUIPE ENVOLVIDA: PESQUISADOR PRINCIPAL, ORIENTADOR, COORIENTADOR E COLABORADORES, DESTACANDO AS ATIVIDADES DE CADA UM].
+A pesquisa envolverá as seguintes pessoas:
+
+\begin{itemize}
+    \item \textbf{Autor:} responsável pelo levantamento de requisitos, pela modelagem e pelo desenvolvimento da plataforma, pela condução da demonstração e da avaliação e pela redação do trabalho;
+    \item \textbf{Orientador:} Prof. Me. Ronaldo Pires Borges, responsável pelo acompanhamento metodológico e técnico ao longo de todas as etapas;
+    \item \textbf{Equipe do herbário:} coordenadoras e discentes que atuam no acervo, que serão fontes dos requisitos, participarão das revisões dos incrementos e avaliarão a área de gerenciamento;
+    \item \textbf{Visitantes:} estudantes do campus que avaliarão a área pública de consulta (\autoref{subsec:participantes}).
+\end{itemize}
 
 \subsection{RECURSOS MATERIAIS E INFRAESTRUTURAIS}
 \label{subsec:recursos-materiais}
 
-[DETALHAR INFRAESTRUTURA DE LABORATÓRIOS, EQUIPAMENTOS, SOFTWARES E INSUMOS NECESSÁRIOS].
+O desenvolvimento será realizado no computador pessoal do autor, com tecnologias de código aberto e sem custo de licença: Node.js, TypeScript, React, PostgreSQL com a extensão PostGIS (\autoref{subsec:tecnologias}) e o sistema de controle de versões Git. A plataforma será implantada em um servidor do IFPI -- Campus Floriano, tanto para os testes quanto após a entrega. As fotografias das exsicatas utilizadas na demonstração serão feitas com o celular do autor. Serão utilizados ainda o acervo do herbário e o seu livro de registro, como fontes de dados, e material impresso para os termos de consentimento e os roteiros de avaliação.
+% VERIFICAR/ALINHAR: confirmar com o orientador e com a coordenação do campus a cessão DO SERVIDOR
 
 \subsubsection{Orçamento}
 \label{subsubsec:orcamento}
 
-A \autoref{tab:orcamento} sintetiza os custos previstos por categoria de despesa para a realização da pesquisa.
+A \autoref{tab:orcamento} sintetiza os custos previstos. Como os principais recursos já estão disponíveis ou são gratuitos, o único custo direto previsto é a impressão dos termos de consentimento e dos roteiros de avaliação, calculada para até 14 participantes, com duas vias de cada termo.
 
 \begin{table}[H]
     \centering
     \caption{Orçamento estimado da pesquisa}
     \label{tab:orcamento}
-    \begin{tabularx}{0.85\textwidth}{Xcr}
+    \small
+    \begin{tabularx}{\textwidth}{Xlr}
         \toprule
-        \textbf{Item / Descrição} & \textbf{Qtd.} & \textbf{Valor Total (R\$)} \\
+        \textbf{Item} & \textbf{Origem} & \textbf{Valor (R\$)} \\
         \midrule
-        Material de escritório e insumos & 1 & 150,00 \\
-        Impressões e cópias de questionários & 1 & 100,00 \\
-        Deslocamento e transporte para coleta & 1 & 200,00 \\
-        Licenças de software e ferramentas & 1 & 300,00 \\
+        Computador para desenvolvimento & Próprio do autor & 0,00 \\
+        Celular para as fotografias das exsicatas & Próprio do autor & 0,00 \\
+        Servidor para implantação da plataforma & Cedido pelo IFPI & 0,00 \\
+        Softwares e bibliotecas (Node.js, TypeScript, React, PostgreSQL, PostGIS, Git) & Código aberto & 0,00 \\
+        Impressão dos TCLE, roteiros de tarefas e questionários (cerca de 100 páginas) & Recurso do autor & 50,00 \\
         \midrule
-        \textbf{TOTAL} & & \textbf{750,00} \\
+        \textbf{TOTAL} & & \textbf{50,00} \\
         \bottomrule
     \end{tabularx}
     \fonte{Elaborado pelo autor.}
@@ -370,31 +457,43 @@ A \autoref{tab:orcamento} sintetiza os custos previstos por categoria de despesa
 \section{CRONOGRAMA DE EXECUÇÃO}
 \label{sec:cronograma}
 
-O cronograma apresenta a distribuição temporal das atividades previstas para a realização da pesquisa. O \autoref{qua:cronograma} detalha as etapas e seus respectivos meses de execução.
+O cronograma apresenta a distribuição das atividades entre janeiro e junho de 2027, organizadas segundo as etapas da DSR descritas na \autoref{subsec:etapas}. A Etapa 3, de projeto e desenvolvimento, corresponde a cerca de seis \textit{Sprints} de duas semanas, de fevereiro a abril. O \autoref{qua:cronograma} detalha as atividades e os respectivos meses de execução.
 
 \begin{quadro}[H]
     \centering
-    \caption{Cronograma de execução da pesquisa}
+    \caption{Cronograma de execução da pesquisa (2027)}
     \label{qua:cronograma}
-    \begin{tabularx}{\textwidth}{|X|c|c|c|c|c|c|}
+    \small
+    \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|c|c|c|c|c|c|}
         \hline
         \textbf{Atividades} & \textbf{Jan} & \textbf{Fev} & \textbf{Mar} & \textbf{Abr} & \textbf{Mai} & \textbf{Jun} \\
         \hline
-        Revisão bibliográfica e estado da arte & \checkmark & \checkmark & & & & \\
+        Revisão bibliográfica & \checkmark & \checkmark & \checkmark & & & \\
         \hline
-        Elaboração e validação dos instrumentos & & \checkmark & \checkmark & & & \\
+        Etapa 1: confirmação do problema e do escopo com a equipe do herbário & \checkmark & & & & & \\
         \hline
-        Coleta de dados em campo & & & \checkmark & \checkmark & & \\
+        Etapa 2: levantamento de requisitos e elaboração do \textit{Product Backlog} & \checkmark & \checkmark & & & & \\
         \hline
-        Processamento e análise dos dados & & & & \checkmark & \checkmark & \\
+        Etapa 3: modelagem do banco de dados & & \checkmark & & & & \\
         \hline
-        Redação do relatório final e artigo & & & & & \checkmark & \checkmark \\
+        Etapa 3: área de gerenciamento do acervo & & & \checkmark & & & \\
         \hline
-        Revisão e submissão/defesa & & & & & & \checkmark \\
+        Etapa 3: área pública de consulta & & & & \checkmark & & \\
+        \hline
+        Etapa 4: demonstração com exsicatas reais do acervo & & & & \checkmark & \checkmark & \\
+        \hline
+        Etapa 5: avaliação com a equipe e com visitantes e ajustes & & & & & \checkmark & \\
+        \hline
+        Etapa 6: redação do trabalho & & & \checkmark & \checkmark & \checkmark & \checkmark \\
+        \hline
+        Etapa 6: documentação técnica e manual de uso & & & & & \checkmark & \checkmark \\
+        \hline
+        Revisão final e defesa & & & & & & \checkmark \\
         \hline
     \end{tabularx}
     \fonte{Elaborado pelo autor.}
 \end{quadro}
+
 
 
 % ========================================================================
